@@ -2,10 +2,11 @@
 import re
 import clipboard
 
+
 def get_sentences():
     """Export sentences from a kinde clippings text file."""
     # Read .txt file
-    with open('H:/documents/My Clippings.txt', encoding='utf-8') as notes:
+    with open("H:/documents/My Clippings.txt", encoding="utf-8") as notes:
         text_raw = notes.read()
 
     # Format the text
@@ -14,6 +15,7 @@ def get_sentences():
 
     # Pass to clipboard
     clipboard.copy(text_formatted)
+
 
 if __name__ == "__main__":
     get_sentences()
