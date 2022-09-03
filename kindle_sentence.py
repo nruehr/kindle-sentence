@@ -13,6 +13,6 @@ with open('H:/documents/My Clippings.txt', encoding='utf-8') as notes:
 # rearrange the text
 text2 = re.sub("- Your Highlight on page .*\n\n", "", text)
 text3 = re.sub("==========", "", text2)
-
+# test
 # copy the text to the clipboard
 clipboard.copy(text3)
