@@ -1,18 +1,19 @@
 # coding=utf-8
-import os
 import re
-import win_unicode_console
 import clipboard
 
-# export the sentences from a kindle my clippings text file
-# open the textfile, read it and save it as text 
-# might have to adjust the drive letter
-with open('H:/documents/My Clippings.txt', encoding='utf-8') as notes:
-    text = notes.read()
+def get_sentences():
+    """Export sentences from a kinde clippings text file."""
+    # Read .txt file
+    with open('H:/documents/My Clippings.txt', encoding='utf-8') as notes:
+        text_raw = notes.read()
 
-# rearrange the text
-text2 = re.sub("- Your Highlight on page .*\n\n", "", text)
-text3 = re.sub("==========", "", text2)
-# test
-# copy the text to the clipboard
-clipboard.copy(text3)
+    # Format the text
+    text_formatted = re.sub("- Your Highlight on page .*\n\n", "", text_raw)
+    text_formatted = re.sub("==========", "", text_formatted)
+
+    # Pass to clipboard
+    clipboard.copy(text_formatted)
+
+if __name__ == "__main__":
+    get_sentences()

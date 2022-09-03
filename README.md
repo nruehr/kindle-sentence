@@ -1,2 +1,5 @@
 # kindlesentence
-Extract sentences from Kindle device plugged in drive mode.
+Extract and format sentences from Kindle.
+
+To Do:
+- make drive letter adjustable
